@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "webpack --mode production",
-    "start": "webpack serve --mode development",
+    "prestart": "echo 'Preparing development environment...'",
+    "start": "webpack serve",
     "build": "webpack --mode production",
     "postbuild": "prettier --write dist/*",
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve"
   },
   "repository": {
     "type": "git",

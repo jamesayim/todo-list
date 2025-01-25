@@ -4,8 +4,50 @@
     box-sizing: border-box;
 }
 
-body {
+#body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+}
+
+.light {
     font-size: 16px;
-    background-color: blue;
-    color: red;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.dark {
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+header {
+    background-image: url('/src/assets/sticky-2-unsplash.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 45vh;
+    flex-direction: row;
+    gap: 30%;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+header * {
+    z-index: 1;
+}
+
+header span:hover {
+    cursor: pointer;
+}
+
+.input-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
 }
