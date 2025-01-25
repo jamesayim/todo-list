@@ -4,17 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlPages = [
-    "index.html",
+    "index.html"
 ];
 
 module.exports = (_env, argv) => {
     const isProduction = argv.mode === 'production';
 
     return {
-        mode: isProduction ? "production" : "development",
-        entry: {
-            'main': './src/client/index.js'
-        },
+        mode: isProduction ? 'production' : 'development',
+        entry: './src/client/index.js',
         output: {
             filename: isProduction ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
@@ -33,8 +31,21 @@ module.exports = (_env, argv) => {
                     generator: {
                         filename: 'assets/[name][ext]',
                     },
-                }
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                        },
+                    },
+                },
             ]
+        },
+        resolve: {
+            extensions: ['.js', '.css'],
         },
         devtool: isProduction ? false : 'eval-source-map',
         devServer: {
@@ -48,7 +59,6 @@ module.exports = (_env, argv) => {
                 directory: path.join(__dirname, 'dist'),
                 serveIndex: true,
                 watch: true,
-                serveIndex: true,
                 publicPath: '/',
             },
         },

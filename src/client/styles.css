@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-html {
+body {
     font-size: 16px;
     background-color: blue;
+    color: red;
 }
