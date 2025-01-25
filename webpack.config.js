@@ -17,13 +17,13 @@ module.exports = (_env, argv) => {
             filename: isProduction ? '[name].[contenthash].bundle.js' : '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
             clean: true,
-            publicPath: '/todo-list/'
+            publicPath: '/'
         },
         module: {
             rules: [
                 {
                     test: /\.css$/,
-                    use: [ isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader']
+                    use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader']
                 },
                 {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -51,7 +51,8 @@ module.exports = (_env, argv) => {
         devServer: {
             compress: true,
             port: 8080,
-            historyApiFallback: true,
+            hot: true,
+            historyApiFallback: false,
             watchFiles: [
                 'src/client/index.html'
             ],
@@ -63,19 +64,17 @@ module.exports = (_env, argv) => {
             },
         },
         plugins: [
-            ...htmlPages.map(page => {
-                const name = page.replace('.html', '');
-                return new HtmlWebpackPlugin({
-                    filename: `${name}.html`,
-                    template: `./src/client/${page}`,
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: './src/client/' + htmlPages[0],
                     inject: 'body',
+                    scriptLoading: 'blocking',
                     minify: {
                         removeComments: true,
                         collapseWhitespace: false,
                         useShortDoctype: false,
                     },
-                });
-            }),
+                }),
             isProduction && new MiniCssExtractPlugin({
                 filename: "[name].[contenthash].css",
             }),
