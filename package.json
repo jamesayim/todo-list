@@ -1,14 +1,15 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
-  "description": "a basic todo-list app",
+  "description": "A basic todo-list app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode production",
+    "prestart": "webpack --mode production",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "dev": "webpack serve --mode development",
-    "postbuild": "prettier --write dist/*"
+    "postbuild": "prettier --write dist/*",
+    "dev": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "mini-css-extract-plugin": "^2.9.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }
