@@ -7,22 +7,13 @@
 #body {
     font-family: 'Courier New', Courier, monospace;
     height: 100%;
-}
-
-.light {
     font-size: 16px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
 
-.dark {
-    font-size: 16px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-}
-
 header {
-    background-image: url('/src/assets/sticky-2-unsplash.jpg');
+    background-image: url('/src/assets/sticky-3-unsplash.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -33,11 +24,7 @@ header {
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-}
-
-header * {
-    z-index: 1;
+    font-size: 1.7rem;
 }
 
 header span:hover {
@@ -48,6 +35,139 @@ header span:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 10px;
+    gap: 15px;
+    border: 1px solid rgb(0, 0, 0, 0.25);
+    width: 600px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    top: -35px;
+    left: 0;
 }
+
+.input-todo input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    width: 80%;
+    height: 70%;
+    padding: 20px;
+    border: none;
+}
+
+.input-todo input::placeholder {
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.input-todo input:focus {
+    outline: none;
+    border: 2px solid rgba(14, 10, 15, 0.25);
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.input-todo span {
+    color: rgba(14, 10, 15, 0.25);
+}
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(14, 10, 15, 0.25);
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    top: -10px;
+    left: 0;
+}
+
+#number-of-tasks {
+    justify-self: flex-start;
+}
+
+.middle {
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+#clear-completed-tasks {
+    justify-self: flex-end;
+}
+#clear-completed-tasks:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.middle *:hover {
+    cursor: pointer;
+    color: rgb(6, 46, 179);
+}
+
+#tick-complete {
+    color: rgb(179, 6, 179);
+    margin-left: 15px;
+}
+
+#tick-complete:hover {
+    opacity: 50%;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+.todo-content p {
+    width: 70%;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.tools *:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.todo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(14, 10, 15, 0.25);
+    width: 600px;
+    height: 70px;
+    border-radius: 10px;
+    border-top: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    top: -10px;
+    left: 0;
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
+}
+
