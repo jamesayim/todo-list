@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Todo List</title>
     <script src="https://kit.fontawesome.com/0744a0f8ea.js" crossorigin="anonymous"></script>
-<link href="/main.717fe55a893dcc6e9331.css" rel="stylesheet"></head>
+<link href="/main.13e462f0ad85caff1180.css" rel="stylesheet"></head>
 <body class="light" id="body" data-page="home">
-    <header>
+    <header id="header">
         <h1>TODO</h1>
-        <i class="fa-solid fa-moon fa-2x"></i>
+        <span id="moon-icon"><i class="fa-solid fa-moon fa-2x"></i></span>
     </header>
-    
-<script src="/main.31d6cfe0d16ae931b73c.bundle.js"></script></body>
+    <main>
+        <div class="input-todo">
+            <span><i class="fa-regular fa-circle fa-2x"></i></span>
+            <input id="create-todo-input" type="text" placeholder="Create a new todo task...">
+        </div>
+        <div class="todo-container">
+            <span id="number-of-tasks">0 tasks left</span>
+            <div class="middle">
+                <span id="all">All</span>
+                <span id="active">Active</span>
+                <span id="completed">Completed</span>
+            </div>
+            <span id="clear-completed-tasks">Clear Completed</span>
+        </div>
+        <div class="main-content">
+            <div class="todo-content">
+                <span id="tick-complete"><i class="fa-regular fa-circle fa-2x"></i></span>
+                <p class="todo-description">todo list</p>
+                <div class="tools">
+                    <span id="edit"><i class="fa-regular fa-edit fa-2x"></i></span>
+                    <span id="delete"><i class="fa-regular fa-trash-can fa-2x"></i></span>
+                </div>
+            </div>
+        </div>
+    </main>
+<script src="/main.a8f30f7a4dfe26329d4b.bundle.js"></script></body>
 </html>
